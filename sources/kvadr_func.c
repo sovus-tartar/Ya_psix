@@ -1,4 +1,4 @@
-#include "../kvadr_head.h"
+#include "kvadr_head.h"
 
 void enter(double* a, double* b, double* c){
 
