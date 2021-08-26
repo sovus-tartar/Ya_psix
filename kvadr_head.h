@@ -4,7 +4,7 @@
 
 #define TRUE 1
 #define FALSE 0
-#define accuracy 0.000001
+#define accuracy 0.00001
 
 enum ROOTS {
     ZERO_ROOTS = 0,

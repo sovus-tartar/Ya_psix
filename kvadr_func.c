@@ -59,7 +59,7 @@ int square_solver(double a, double b, double c, double* x1, double* x2){
 }
 
 char is_equal(double a, double b) {
-    if (abs(a - b) < accuracy) {
+    if (fabs(a - b) < accuracy) {
         return TRUE;
     } else {
         return FALSE;
