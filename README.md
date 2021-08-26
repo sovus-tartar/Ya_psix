@@ -1,1 +1,1 @@
-# cucumber
+# Square equations solver
