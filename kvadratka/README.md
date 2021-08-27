@@ -7,6 +7,7 @@ To install:
 * clone [this repository](https://github.com/sovus-tartar/cucumber) `git clone https://github.com/sovus-tartar/cucumber`
 * go to kvadratka directory `cd kvadratka`
 * run make `make`
+# Run
 * run `./kvadratka` to start the program
 # Features
 To run unit test: 
