@@ -1,10 +1,17 @@
 /* kvadr_head.h
 * properties for Square equations solver */
 
-/*!\mainpage
+//#define DEBUG  //to debug uncomment "#define Debug"
+
+/*!\mainpage Square equations solver
  *
+ * This program can solve the second order equations.
  *
+ * It was written for education purposes.
  *
+ * ver. alpha 1.0
+ *
+ * ©Sovus_tartar
  */
 
 #include <stdio.h>
@@ -22,10 +29,10 @@
 //!
 //! \details An enum with all possible number of roots.
 enum ROOTS {
-    ZERO_ROOTS = 0,
+    INF_ROOTS = -1,
+    ZERO_ROOTS,
     ONE_ROOT ,
     TWO_ROOTS,
-    INF_ROOTS,
 };
 
 //! \struct equation_data [kvadr_head.h]
@@ -33,12 +40,12 @@ enum ROOTS {
 //!
 //! \details Structure which consists of equation's coefficients and roots for debugging purposes.
 struct equation_data {
-    /*!Coefficient with x^2 */double a;
-    /*!Coefficient with x */double b;
-    /*!A free coefficient. */double c;
-    /*!First expected root. */double x1_expect;
-    /*!Second expected root. */double x2_expect;
-    /*!Expected number of roots*/int num_expect;
+    /*!Coefficient with x^2 */    double a;
+    /*!Coefficient with x */      double b;
+    /*!A free coefficient. */     double c;
+    /*!First expected root. */    double x1_expect;
+    /*!Second expected root. */   double x2_expect;
+    /*!Expected number of roots*/ int num_expect;
 };
 
 //! \brief An enter function.
@@ -47,7 +54,7 @@ struct equation_data {
 //! \param c A free coefficient.
 //!
 //! \details This function allows user to enter coefficients of square equation.
-void enter(double* a, double* b, double* c);
+void coefficients_input(double* a, double* b, double* c);
 
 //! \brief Equations solver function.
 //! \param a Coefficient with x^2.
@@ -68,32 +75,33 @@ int equation_solver(double a, double b, double c, double* x1, double* x2);
 //! \details This function comparisons double numbers according by accuracy constant. It also can compare NAN values.
 char is_equal(double val_1, double val_2);
 
-//! \brief Linear equations solver.
-//! \param b Coefficient with b.
-//! \param c Coefficient with c.
-//! \return The value of x.
+//! \brief Linear equation solver.
+//! \param b Coefficient with x^1.
+//! \param c A free coefficient.
+//! \return The value of root.
 //!
 //! \details This function solves linear equations(bx + c = 0).
 double solve_linear(double b, double c);
 
-//! \brief Result output
-//! \param num The number of roots
+//! \brief Roots output
+//! \param root_number The number of roots
 //! \param x1 The first root
-//! \param x2 The second root(if exists)
+//! \param x2 The second root(if it does not exist you still have to send a parameter)
 //!
-//! \details This function displays x1 and x2 root values if num = 2, x1 root value if num = 1, "No solutions" if num = 0
-//! Error if num is equal to anything else
-void result(int num, double x1, double x2);
+//! \details This function displays x1 and x2 root values if root_number = 2, x1 root value if root_number = 1,
+//! "No solutions" if root_number = 0,
+//! "Unknown Error: unexpected number of roots" if root_number is equal to anything else
+void print_roots(int root_number, double x1, double x2);
 
 //! \brief A check function
 //! \param a Coefficient with x^2.
-//! \param b Coefficient with x.
+//! \param b Coefficient with x^1.
 //! \param c A free coefficient.
 //! \param x1_expect First expected root of equation.
 //! \param x2_expect Second expected root of equation.
 //! \param num_expect Expected number of roots.
 //!
-//! \details This function checks equation_solver work by coefficients a, b, c. If the equations_solver function gave incorrect
+//! \details This function checks equation_solver work by coefficients a, b, c. If the equations_solver function give incorrect
 //! x1 and x2 (order is not important) then it displays a, b, c values, x1, x2 and num from equation_solver,
 //! expected x1, x2 and num
 void check_equation(double a, double b, double c, double x1_expect, double x2_expect, int num_expect);
@@ -104,4 +112,31 @@ void check_equation(double a, double b, double c, double x1_expect, double x2_ex
 //! It sends it to check_equation
 void unit_test(void);
 
+//! \brief Clean buffer function
+//!
+//! \details This function cleans the stdio buffer.
+void clean_buffer(void);
 
+//! \brief Square equation print function
+//! \param a Coefficient with x^2
+//! \param b Coefficient with x^1
+//! \param c Coefficient with x^0
+//! \details This function prints square equation(ax^2 + bx + x = 0) from it's coefficients.
+void equation_output(double a, double b, double c);
+
+//! \brief Variable input function
+//! \param coefficient pointer to coefficient
+//! \param coef_letter letter of coefficient
+//! \return 1 if input was succesfull, 0 if it wasn't
+//! \details This function prints "Enter <coefficient name>:" and waits for user's input, then it goes to a new line.
+//! If input was successful returns 1, else returns 0.
+int variable_input(double* coefficient, int coef_letter);
+
+//! \brief The user interface function
+//! \details This is a user interface function which lets user interact with the program
+void user_interface(void);
+
+//! \brief The exit program function.
+//! \details This function lets user to see program's output in a terminal and proposes to exit by pressing
+//! any key.
+void program_exit(void);
