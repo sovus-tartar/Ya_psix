@@ -1,7 +1,7 @@
 # Square equations solver
 This program can solve the second order equations.
 
-It was written for education purposes.
+It was made for education purposes.
 # Installing
 To install:
 * clone [this repository](https://github.com/sovus-tartar/cucumber) `git clone https://github.com/sovus-tartar/cucumber`
