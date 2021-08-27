@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Clion_projects/kvadratka/include/kvadr_head.h
+stdio.h
+-
+math.h
+-
+assert.h
+-
+
+C:/Clion_projects/kvadratka/sources/kvadr_func.c
+../include/kvadr_head.h
+C:/Clion_projects/kvadratka/include/kvadr_head.h
+
+C:/Clion_projects/kvadratka/sources/kvadr_main.c
+../include/kvadr_head.h
+C:/Clion_projects/kvadratka/include/kvadr_head.h
+
+C:/Clion_projects/kvadratka/tests/kvadr_test.c
+../include/kvadr_head.h
+C:/Clion_projects/kvadratka/include/kvadr_head.h
+
