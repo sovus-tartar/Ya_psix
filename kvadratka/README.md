@@ -8,6 +8,3 @@ To install:
 * go to kvadratka directory 'cd kvadratka'
 * run make 'make'
 * run './kvadratka' to start the program
-# Features
-To start Unit test you should decomment "#define DEBUG" in './include/kvadr_head.h' and compile one more time
-   
