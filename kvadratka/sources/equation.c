@@ -24,9 +24,7 @@ void coefficients_input(double* a, double* b, double* c){
 
         if (correct_input_number != 3) {
             printf("\nWrong input. Try again\n");
-
         }
-
         clean_buffer();
     }
 }
@@ -114,7 +112,6 @@ void print_roots(const int root_number, const double x1, const double x2){
             break;
         default:
             printf("Unknown Error: unexpected number of roots\n");
-
     }
 }
 
@@ -123,14 +120,14 @@ void clean_buffer(void){
 }
 
 void equation_output(const double a, const double b, const double c){
-    assert(a);
-    assert(b);
-    assert(c);
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
 
     printf("%lf * x^2 + %lf * x + %lf = 0\n", a, b, c);
 }
 
-int variable_input(double* coefficient, const int coef_letter){
+int variable_input(double* coefficient, const int coef_letter) {
 
     assert(coefficient);
     char input[40];
@@ -143,10 +140,7 @@ int variable_input(double* coefficient, const int coef_letter){
         sscanf(input, "%lf", coefficient);
         return 1;
     } else return 0;
-
-
 }
-
 
 void user_interface(void){
 
@@ -195,4 +189,3 @@ int input_check(char* input){
     }
 
 }
-

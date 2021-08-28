@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/kvadratka.dir/sources/kvadr_func.c.obj"
-  "CMakeFiles/kvadratka.dir/sources/kvadr_main.c.obj"
-  "CMakeFiles/kvadratka.dir/tests/kvadr_test.c.obj"
+  "CMakeFiles/kvadratka.dir/sources/equation.c.obj"
+  "CMakeFiles/kvadratka.dir/sources/main.c.obj"
+  "CMakeFiles/kvadratka.dir/tests/test.c.obj"
   "kvadratka.exe"
   "kvadratka.exe.manifest"
   "kvadratka.pdb"

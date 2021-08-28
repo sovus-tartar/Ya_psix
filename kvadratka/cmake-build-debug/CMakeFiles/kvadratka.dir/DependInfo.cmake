@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Clion_projects/kvadratka/sources/kvadr_func.c" "C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/kvadratka.dir/sources/kvadr_func.c.obj"
-  "C:/Clion_projects/kvadratka/sources/kvadr_main.c" "C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/kvadratka.dir/sources/kvadr_main.c.obj"
-  "C:/Clion_projects/kvadratka/tests/kvadr_test.c" "C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/kvadratka.dir/tests/kvadr_test.c.obj"
+  "C:/Clion_projects/kvadratka/sources/equation.c" "C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/kvadratka.dir/sources/equation.c.obj"
+  "C:/Clion_projects/kvadratka/sources/main.c" "C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/kvadratka.dir/sources/main.c.obj"
+  "C:/Clion_projects/kvadratka/tests/test.c" "C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/kvadratka.dir/tests/test.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

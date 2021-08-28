@@ -128,77 +128,77 @@ kvadratka/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/build
 .PHONY : kvadratka/fast
 
-sources/kvadr_func.obj: sources/kvadr_func.c.obj
-.PHONY : sources/kvadr_func.obj
+sources/equation.obj: sources/equation.c.obj
+.PHONY : sources/equation.obj
 
 # target to build an object file
-sources/kvadr_func.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/kvadr_func.c.obj
-.PHONY : sources/kvadr_func.c.obj
+sources/equation.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/equation.c.obj
+.PHONY : sources/equation.c.obj
 
-sources/kvadr_func.i: sources/kvadr_func.c.i
-.PHONY : sources/kvadr_func.i
+sources/equation.i: sources/equation.c.i
+.PHONY : sources/equation.i
 
 # target to preprocess a source file
-sources/kvadr_func.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/kvadr_func.c.i
-.PHONY : sources/kvadr_func.c.i
+sources/equation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/equation.c.i
+.PHONY : sources/equation.c.i
 
-sources/kvadr_func.s: sources/kvadr_func.c.s
-.PHONY : sources/kvadr_func.s
+sources/equation.s: sources/equation.c.s
+.PHONY : sources/equation.s
 
 # target to generate assembly for a file
-sources/kvadr_func.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/kvadr_func.c.s
-.PHONY : sources/kvadr_func.c.s
+sources/equation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/equation.c.s
+.PHONY : sources/equation.c.s
 
-sources/kvadr_main.obj: sources/kvadr_main.c.obj
-.PHONY : sources/kvadr_main.obj
+sources/main.obj: sources/main.c.obj
+.PHONY : sources/main.obj
 
 # target to build an object file
-sources/kvadr_main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/kvadr_main.c.obj
-.PHONY : sources/kvadr_main.c.obj
+sources/main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/main.c.obj
+.PHONY : sources/main.c.obj
 
-sources/kvadr_main.i: sources/kvadr_main.c.i
-.PHONY : sources/kvadr_main.i
+sources/main.i: sources/main.c.i
+.PHONY : sources/main.i
 
 # target to preprocess a source file
-sources/kvadr_main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/kvadr_main.c.i
-.PHONY : sources/kvadr_main.c.i
+sources/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/main.c.i
+.PHONY : sources/main.c.i
 
-sources/kvadr_main.s: sources/kvadr_main.c.s
-.PHONY : sources/kvadr_main.s
+sources/main.s: sources/main.c.s
+.PHONY : sources/main.s
 
 # target to generate assembly for a file
-sources/kvadr_main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/kvadr_main.c.s
-.PHONY : sources/kvadr_main.c.s
+sources/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/sources/main.c.s
+.PHONY : sources/main.c.s
 
-tests/kvadr_test.obj: tests/kvadr_test.c.obj
-.PHONY : tests/kvadr_test.obj
+tests/test.obj: tests/test.c.obj
+.PHONY : tests/test.obj
 
 # target to build an object file
-tests/kvadr_test.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/tests/kvadr_test.c.obj
-.PHONY : tests/kvadr_test.c.obj
+tests/test.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/tests/test.c.obj
+.PHONY : tests/test.c.obj
 
-tests/kvadr_test.i: tests/kvadr_test.c.i
-.PHONY : tests/kvadr_test.i
+tests/test.i: tests/test.c.i
+.PHONY : tests/test.i
 
 # target to preprocess a source file
-tests/kvadr_test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/tests/kvadr_test.c.i
-.PHONY : tests/kvadr_test.c.i
+tests/test.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/tests/test.c.i
+.PHONY : tests/test.c.i
 
-tests/kvadr_test.s: tests/kvadr_test.c.s
-.PHONY : tests/kvadr_test.s
+tests/test.s: tests/test.c.s
+.PHONY : tests/test.s
 
 # target to generate assembly for a file
-tests/kvadr_test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/tests/kvadr_test.c.s
-.PHONY : tests/kvadr_test.c.s
+tests/test.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kvadratka.dir\build.make CMakeFiles/kvadratka.dir/tests/test.c.s
+.PHONY : tests/test.c.s
 
 # Help Target
 help:
@@ -209,15 +209,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... kvadratka
-	@echo ... sources/kvadr_func.obj
-	@echo ... sources/kvadr_func.i
-	@echo ... sources/kvadr_func.s
-	@echo ... sources/kvadr_main.obj
-	@echo ... sources/kvadr_main.i
-	@echo ... sources/kvadr_main.s
-	@echo ... tests/kvadr_test.obj
-	@echo ... tests/kvadr_test.i
-	@echo ... tests/kvadr_test.s
+	@echo ... sources/equation.obj
+	@echo ... sources/equation.i
+	@echo ... sources/equation.s
+	@echo ... sources/main.obj
+	@echo ... sources/main.i
+	@echo ... sources/main.s
+	@echo ... tests/test.obj
+	@echo ... tests/test.i
+	@echo ... tests/test.s
 .PHONY : help
 
 

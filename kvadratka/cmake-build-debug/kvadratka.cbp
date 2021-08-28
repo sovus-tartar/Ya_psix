@@ -74,16 +74,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Clion_projects/kvadratka/include/kvadr_head.h">
+		<Unit filename="C:/Clion_projects/kvadratka/include/equation.h">
 			<Option target="kvadratka"/>
 		</Unit>
-		<Unit filename="C:/Clion_projects/kvadratka/sources/kvadr_func.c">
+		<Unit filename="C:/Clion_projects/kvadratka/sources/equation.c">
 			<Option target="kvadratka"/>
 		</Unit>
-		<Unit filename="C:/Clion_projects/kvadratka/sources/kvadr_main.c">
+		<Unit filename="C:/Clion_projects/kvadratka/sources/main.c">
 			<Option target="kvadratka"/>
 		</Unit>
-		<Unit filename="C:/Clion_projects/kvadratka/tests/kvadr_test.c">
+		<Unit filename="C:/Clion_projects/kvadratka/tests/test.c">
 			<Option target="kvadratka"/>
 		</Unit>
 		<Unit filename="C:/Clion_projects/kvadratka/CMakeLists.txt">

@@ -4,7 +4,7 @@
 #include "../include/equation.h"
 
 void unit_test(void){
-    int element_number; // init
+    int element_number = 0;
 
     printf("Debug mode started!\n");
 
@@ -19,7 +19,7 @@ void unit_test(void){
                                              10, 8, 15, NAN, NAN, ZERO_ROOTS,
                                              0, 0, 0, NAN, NAN, INF_ROOTS}; //9
 
-    for (element_number = 0; element_number <= 9; element_number++){ // sizeof
+    for (element_number = 0; element_number <= (((sizeof(ref_equations)) / sizeof(ref_equations[0]) - 1));element_number++){
         check_equation(ref_equations[element_number].a,         ref_equations[element_number].b,
                        ref_equations[element_number].c,         ref_equations[element_number].x1_expect,
                        ref_equations[element_number].x2_expect, ref_equations[element_number].num_expect);

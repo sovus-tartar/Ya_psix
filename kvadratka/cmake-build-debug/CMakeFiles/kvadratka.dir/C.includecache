@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/Clion_projects/kvadratka/include/kvadr_head.h
+C:/Clion_projects/kvadratka/include/equation.h
 
-C:/Clion_projects/kvadratka/sources/kvadr_func.c
+C:/Clion_projects/kvadratka/sources/equation.c
 stdio.h
 -
 math.h
@@ -19,20 +19,20 @@ string.h
 -
 ctype.h
 -
-../include/kvadr_head.h
-C:/Clion_projects/kvadratka/include/kvadr_head.h
+../include/equation.h
+C:/Clion_projects/kvadratka/include/equation.h
 
-C:/Clion_projects/kvadratka/sources/kvadr_main.c
+C:/Clion_projects/kvadratka/sources/main.c
 stdio.h
 -
-../include/kvadr_head.h
-C:/Clion_projects/kvadratka/include/kvadr_head.h
+../include/equation.h
+C:/Clion_projects/kvadratka/include/equation.h
 
-C:/Clion_projects/kvadratka/tests/kvadr_test.c
+C:/Clion_projects/kvadratka/tests/test.c
 stdio.h
 -
 math.h
 -
-../include/kvadr_head.h
-C:/Clion_projects/kvadratka/include/kvadr_head.h
+../include/equation.h
+C:/Clion_projects/kvadratka/include/equation.h
 

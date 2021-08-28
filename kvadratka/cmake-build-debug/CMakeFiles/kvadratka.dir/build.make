@@ -65,57 +65,57 @@ include CMakeFiles/kvadratka.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/kvadratka.dir/flags.make
 
-CMakeFiles/kvadratka.dir/sources/kvadr_main.c.obj: CMakeFiles/kvadratka.dir/flags.make
-CMakeFiles/kvadratka.dir/sources/kvadr_main.c.obj: ../sources/kvadr_main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Clion_projects\kvadratka\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/kvadratka.dir/sources/kvadr_main.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kvadratka.dir\sources\kvadr_main.c.obj -c C:\Clion_projects\kvadratka\sources\kvadr_main.c
+CMakeFiles/kvadratka.dir/sources/main.c.obj: CMakeFiles/kvadratka.dir/flags.make
+CMakeFiles/kvadratka.dir/sources/main.c.obj: ../sources/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Clion_projects\kvadratka\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/kvadratka.dir/sources/main.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kvadratka.dir\sources\main.c.obj -c C:\Clion_projects\kvadratka\sources\main.c
 
-CMakeFiles/kvadratka.dir/sources/kvadr_main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kvadratka.dir/sources/kvadr_main.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Clion_projects\kvadratka\sources\kvadr_main.c > CMakeFiles\kvadratka.dir\sources\kvadr_main.c.i
+CMakeFiles/kvadratka.dir/sources/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kvadratka.dir/sources/main.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Clion_projects\kvadratka\sources\main.c > CMakeFiles\kvadratka.dir\sources\main.c.i
 
-CMakeFiles/kvadratka.dir/sources/kvadr_main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kvadratka.dir/sources/kvadr_main.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Clion_projects\kvadratka\sources\kvadr_main.c -o CMakeFiles\kvadratka.dir\sources\kvadr_main.c.s
+CMakeFiles/kvadratka.dir/sources/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kvadratka.dir/sources/main.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Clion_projects\kvadratka\sources\main.c -o CMakeFiles\kvadratka.dir\sources\main.c.s
 
-CMakeFiles/kvadratka.dir/sources/kvadr_func.c.obj: CMakeFiles/kvadratka.dir/flags.make
-CMakeFiles/kvadratka.dir/sources/kvadr_func.c.obj: ../sources/kvadr_func.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Clion_projects\kvadratka\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/kvadratka.dir/sources/kvadr_func.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kvadratka.dir\sources\kvadr_func.c.obj -c C:\Clion_projects\kvadratka\sources\kvadr_func.c
+CMakeFiles/kvadratka.dir/sources/equation.c.obj: CMakeFiles/kvadratka.dir/flags.make
+CMakeFiles/kvadratka.dir/sources/equation.c.obj: ../sources/equation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Clion_projects\kvadratka\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/kvadratka.dir/sources/equation.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kvadratka.dir\sources\equation.c.obj -c C:\Clion_projects\kvadratka\sources\equation.c
 
-CMakeFiles/kvadratka.dir/sources/kvadr_func.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kvadratka.dir/sources/kvadr_func.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Clion_projects\kvadratka\sources\kvadr_func.c > CMakeFiles\kvadratka.dir\sources\kvadr_func.c.i
+CMakeFiles/kvadratka.dir/sources/equation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kvadratka.dir/sources/equation.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Clion_projects\kvadratka\sources\equation.c > CMakeFiles\kvadratka.dir\sources\equation.c.i
 
-CMakeFiles/kvadratka.dir/sources/kvadr_func.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kvadratka.dir/sources/kvadr_func.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Clion_projects\kvadratka\sources\kvadr_func.c -o CMakeFiles\kvadratka.dir\sources\kvadr_func.c.s
+CMakeFiles/kvadratka.dir/sources/equation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kvadratka.dir/sources/equation.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Clion_projects\kvadratka\sources\equation.c -o CMakeFiles\kvadratka.dir\sources\equation.c.s
 
-CMakeFiles/kvadratka.dir/tests/kvadr_test.c.obj: CMakeFiles/kvadratka.dir/flags.make
-CMakeFiles/kvadratka.dir/tests/kvadr_test.c.obj: ../tests/kvadr_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Clion_projects\kvadratka\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/kvadratka.dir/tests/kvadr_test.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kvadratka.dir\tests\kvadr_test.c.obj -c C:\Clion_projects\kvadratka\tests\kvadr_test.c
+CMakeFiles/kvadratka.dir/tests/test.c.obj: CMakeFiles/kvadratka.dir/flags.make
+CMakeFiles/kvadratka.dir/tests/test.c.obj: ../tests/test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Clion_projects\kvadratka\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/kvadratka.dir/tests/test.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\kvadratka.dir\tests\test.c.obj -c C:\Clion_projects\kvadratka\tests\test.c
 
-CMakeFiles/kvadratka.dir/tests/kvadr_test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kvadratka.dir/tests/kvadr_test.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Clion_projects\kvadratka\tests\kvadr_test.c > CMakeFiles\kvadratka.dir\tests\kvadr_test.c.i
+CMakeFiles/kvadratka.dir/tests/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kvadratka.dir/tests/test.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Clion_projects\kvadratka\tests\test.c > CMakeFiles\kvadratka.dir\tests\test.c.i
 
-CMakeFiles/kvadratka.dir/tests/kvadr_test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kvadratka.dir/tests/kvadr_test.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Clion_projects\kvadratka\tests\kvadr_test.c -o CMakeFiles\kvadratka.dir\tests\kvadr_test.c.s
+CMakeFiles/kvadratka.dir/tests/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kvadratka.dir/tests/test.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Clion_projects\kvadratka\tests\test.c -o CMakeFiles\kvadratka.dir\tests\test.c.s
 
 # Object files for target kvadratka
 kvadratka_OBJECTS = \
-"CMakeFiles/kvadratka.dir/sources/kvadr_main.c.obj" \
-"CMakeFiles/kvadratka.dir/sources/kvadr_func.c.obj" \
-"CMakeFiles/kvadratka.dir/tests/kvadr_test.c.obj"
+"CMakeFiles/kvadratka.dir/sources/main.c.obj" \
+"CMakeFiles/kvadratka.dir/sources/equation.c.obj" \
+"CMakeFiles/kvadratka.dir/tests/test.c.obj"
 
 # External object files for target kvadratka
 kvadratka_EXTERNAL_OBJECTS =
 
-kvadratka.exe: CMakeFiles/kvadratka.dir/sources/kvadr_main.c.obj
-kvadratka.exe: CMakeFiles/kvadratka.dir/sources/kvadr_func.c.obj
-kvadratka.exe: CMakeFiles/kvadratka.dir/tests/kvadr_test.c.obj
+kvadratka.exe: CMakeFiles/kvadratka.dir/sources/main.c.obj
+kvadratka.exe: CMakeFiles/kvadratka.dir/sources/equation.c.obj
+kvadratka.exe: CMakeFiles/kvadratka.dir/tests/test.c.obj
 kvadratka.exe: CMakeFiles/kvadratka.dir/build.make
 kvadratka.exe: CMakeFiles/kvadratka.dir/linklibs.rsp
 kvadratka.exe: CMakeFiles/kvadratka.dir/objects1.rsp
