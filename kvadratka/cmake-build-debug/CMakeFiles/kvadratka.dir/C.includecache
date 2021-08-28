@@ -7,14 +7,32 @@
 #IncludeRegexTransform: 
 
 C:/Clion_projects/kvadratka/include/kvadr_head.h
+
+C:/Clion_projects/kvadratka/sources/kvadr_func.c
 stdio.h
 -
 math.h
 -
 assert.h
 -
+string.h
+-
+ctype.h
+-
+../include/kvadr_head.h
+C:/Clion_projects/kvadratka/include/kvadr_head.h
 
-C:/Clion_projects/kvadratka/sources/kvadr_func.c
+C:/Clion_projects/kvadratka/sources/kvadr_main.c
+stdio.h
+-
+../include/kvadr_head.h
+C:/Clion_projects/kvadratka/include/kvadr_head.h
+
+C:/Clion_projects/kvadratka/tests/kvadr_test.c
+stdio.h
+-
+math.h
+-
 ../include/kvadr_head.h
 C:/Clion_projects/kvadratka/include/kvadr_head.h
 

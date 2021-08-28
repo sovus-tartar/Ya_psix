@@ -3,4 +3,4 @@ project(kvadratka C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(kvadratka sources/kvadr_main.c sources/kvadr_func.c include/kvadr_head.h tests/kvadr_test.c)
+add_executable(kvadratka sources/main.c sources/equation.c include/equation.h tests/test.c)
