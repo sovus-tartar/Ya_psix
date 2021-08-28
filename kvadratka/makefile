@@ -1,3 +1,3 @@
 all:
-	g++ ./sources/kvadr_main.c ./sources/kvadr_func.c ./include/kvadr_head.h ./tests/kvadr_test.c -o  kvadratka
+	g++ ./sources/main.c ./sources/equation.c ./include/equation.h ./tests/test.c -o  kvadratka
 
