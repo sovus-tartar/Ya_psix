@@ -11,5 +11,5 @@ To install:
 * run `./kvadratka` to start the program
 # Features
 To run unit test: 
-* run `g++ ./sources/kvadr_main.c ./sources/kvadr_func.c ./include/kvadr_head.h ./tests/kvadr_test.c -o -DDEBUG  kvadratka_debug`
+* run `g++ ./sources/main.c ./sources/equation.c ./include/equation.c.h ./tests/test.c -o -DDEBUG  kvadratka_debug`
 * run `./kvadratka_debug`
