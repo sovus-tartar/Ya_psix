@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Clion_projects/kvadratka/include/equation.h
+
+C:/Clion_projects/kvadratka/sources/equation.c
+stdio.h
+-
+math.h
+-
+assert.h
+-
+string.h
+-
+ctype.h
+-
+../include/equation.h
+C:/Clion_projects/kvadratka/include/equation.h
+

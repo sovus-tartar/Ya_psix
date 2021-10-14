@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\str_functions.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\str_functions.dir/objects.a @CMakeFiles\str_functions.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\str_functions.dir/objects.a -Wl,--no-whole-archive -o str_functions.exe -Wl,--out-implib,libstr_functions.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\str_functions.dir\linklibs.rsp
