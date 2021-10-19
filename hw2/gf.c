@@ -12,28 +12,59 @@ unsigned long long gcd(unsigned long long, unsigned long long);
 int prime_check(unsigned long long);
 unsigned long long pow_mod(unsigned long long n, unsigned long long k, unsigned long long m);
 
+struct formula formula_check(int N);
+struct formula {
+    int a;
+    int b;
+    int i;
+} ;
+
 int main()
 {
+    int N;
+    struct formula out;
 
-    unsigned long long num;
+    scanf("%d", &N);
 
-    scanf("%llu", &num);
+    out = formula_check(N);
 
-    printf("%d", prime_check(num));
-
-    return 0;
+    printf("%d %d %d", out.a, out.b, out.i);
 }
 
-int prime_check(unsigned long long num)
+struct formula formula_check(const int N) {
+
+    int a, b, i, max;
+    struct formula koef = {0, 0, 0};
+
+    max = 0;
+
+    for (a = -N; a < N; a++) //a++ == a = a + 1
+        for (b = -N; b < N; b++) {//0 42 0>42
+
+            for (i = 0; prime_check(i * i + a * i + b) == 1; i++);
+
+            ///printf("i = %d a = %d b = %d\n", i, a, b, N);
+            
+            if (i > koef.i) {
+                koef.i = i;
+                koef.a = a;
+                koef.b = b;
+            } 
+                
+        }
+    return koef;
+}
+
+int prime_check(unsigned long long num) ///
 {
     int i;
+    if (num == 0) return 0;
     srand(time(NULL));
 
     for (i = 1; i <= 20; i++)
     {
         unsigned long long temp;
-        while (gcd(temp = rand(), num) != 1)
-            ;
+        while (gcd(temp = rand(), num) != 1);
 
         if (pow_mod(temp, num - 1, num) != 1)
         {
@@ -52,7 +83,7 @@ unsigned long long pow_mod(unsigned long long n, unsigned long long k, unsigned 
     {
         if ((k % 2) == 1)
         {
-            prod = (prod * mult) % m; //переполнение исправить
+            prod = (prod * mult) % m;
             k = k - 1;
         }
         mult = (mult * mult) % m;
@@ -78,6 +109,7 @@ unsigned long long eu_mod(unsigned long long x, unsigned long long y)
 unsigned long long gcd(unsigned long long x, unsigned long long y)
 {
     unsigned long long q, temp;
+    
     assert(y != 0);
 
     while (y != 0)
