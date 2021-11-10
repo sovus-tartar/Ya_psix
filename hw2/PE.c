@@ -3,6 +3,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 struct sieve_t {
   int n;
   unsigned char *s;
@@ -46,11 +47,10 @@ int main(void)
 {
     struct sieve_t sv;
     unsigned n;
-    //scanf("%u", &n);
-    n = 100;
+    scanf("%u", &n);
     sv.s = (char *)calloc(n, sizeof(char));
     sv.n = n;
     fill_sieve(&sv);
-    printf("%x\n", sv.s[1]);
+    printf("%x\n", sv.s[n / CHAR_BIT]);
     free(sv.s);
 }
