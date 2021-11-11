@@ -1,3 +1,0 @@
-C:/Clion_projects/helloworld/cmake-build-debug/CMakeFiles/helloworld.dir
-C:/Clion_projects/helloworld/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Clion_projects/helloworld/cmake-build-debug/CMakeFiles/rebuild_cache.dir
