@@ -1,2 +1,6 @@
 kvadratka/
 *.exe
+*.out
+*.html
+*.js
+*.css
