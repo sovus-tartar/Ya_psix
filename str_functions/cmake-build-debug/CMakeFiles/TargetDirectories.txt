@@ -1,3 +1,0 @@
-C:/Clion_projects/str_functions/cmake-build-debug/CMakeFiles/str_functions.dir
-C:/Clion_projects/str_functions/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Clion_projects/str_functions/cmake-build-debug/CMakeFiles/rebuild_cache.dir
