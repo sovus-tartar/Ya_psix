@@ -1,3 +1,0 @@
-C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/kvadratka.dir
-C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Clion_projects/kvadratka/cmake-build-debug/CMakeFiles/rebuild_cache.dir
