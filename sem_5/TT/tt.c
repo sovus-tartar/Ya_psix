@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+
 typedef struct node_t
 {
     struct node_t *left;
@@ -48,7 +49,7 @@ node *bin_tree_build(int nodes, int *in, int *pre)
     else
         root->right = NULL;
 
-    //printf("Created node: %d addr: %p, L: %p, R: %p\n", root -> data, root, root -> left, root -> right);
+    printf("Created node: %d addr: %p, L: %p, R: %p\n", root -> data, root, root -> left, root -> right);
 
     return root;
 }
@@ -59,21 +60,24 @@ int tree_topology_build(node *top, int *arr_topology, int *arr_data, int i)
     arr_topology[0] = 1;
     arr_data[0] = top->data;
 
+    if ((top->right == NULL) && (top -> left == NULL)) {
+        return 1;
+    }
+    
     if (top->left != NULL)
-    {
-        
-        i = 1;
-        printf("Node: %d, left: %p, i = %d\n", top -> data , top -> left, i);
+    {   i = 1;
+        //printf("Node: %d, left: %p, i = %d\n", top -> data , top -> left, i);
         i = tree_topology_build(top->left, arr_topology + 1, arr_data + 1, i) + i;
     }
 
     if (top->right != NULL)
     {
-        printf("Node: %d, right: %p, i = %d\n", top -> data , top -> right, i);
-        i = tree_topology_build(top->right, arr_topology + 2 * i, arr_data + i + 1, 0);
+        //printf("Node: %d, right: %p, i = %d\n", top -> data , top -> right, i);
+        i = i + tree_topology_build(top->right, arr_topology + 2 * i, arr_data + i, 1);
         
     }
 
+    
     return i;
 }
 

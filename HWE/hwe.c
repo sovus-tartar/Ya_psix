@@ -12,7 +12,7 @@ struct sieve_t
 void fill_sieve(struct sieve_t *sv);
 int is_prime(struct sieve_t *sv, unsigned n);
 
-void test_is_prime() 
+void test_is_prime()
 {
     unsigned n;
     struct sieve_t sv;
@@ -21,7 +21,7 @@ void test_is_prime()
 
     sv.mod1 = calloc(1, sizeof(struct sieve_t)); //| 1 7 13 19 25 31 37 43 | 49
     sv.mod5 = calloc(1, sizeof(struct sieve_t)); //| 5 11 17 23 29 35 41 47 | 53
-    
+
     scanf("%hhu", &sv.mod1[0]);
     scanf("%hhu", &sv.mod5[0]);
 
