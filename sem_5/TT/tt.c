@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-typedef struct node_t
-{
+typedef struct node_t {
     struct node_t *left;
     struct node_t *right;
     int data;
@@ -44,7 +43,7 @@ node *bin_tree_build(int nodes, int *in, int *pre)
     else
         root->left = NULL;
 
-    if (((nodes > in_pos + 1) && (in_pos != -1)) && (in_pos != nodes - 1)) //right node //in_pos != 0 ???
+    if (((nodes > in_pos + 1) && (in_pos != -1)) && (in_pos != nodes - 1)) //right node
         root->right = bin_tree_build(nodes - in_pos - 1, in + in_pos + 1, pre + in_pos + 1);
     else
         root->right = NULL;
@@ -89,7 +88,7 @@ void tree_topology_print(node *top, int n)
     arr_topology = calloc(2 * n, sizeof(int));
     arr_data = calloc(n, sizeof(int));
 
-    tree_topology_build(top, arr_topology, arr_data, 0);
+    tree_topology_build(top, arr_topology, arr_data, 1);
 
     printf("%d ", n);
     printf("\n");
