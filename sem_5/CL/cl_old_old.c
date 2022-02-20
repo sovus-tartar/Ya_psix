@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+
 struct list_t
 {
     struct list_t *next;
@@ -109,12 +110,8 @@ int coin_num(int *arr, int num, int sum)
                 l = 0;
                 for (i = 0; arr[i] < p; i++)
                 {
-                    if (i == 0)
-                        pre = arr[0];
-                    else 
-                        pre = arr[i] - arr[i - 1];
-                    temp = list_skip(temp, pre);
-                    //printf("current: %d\n",temp -> data);
+                    pre = arr[i] - pre;
+                    temp = list_skip(curr_top, arr[i]);
                     if ((temp->data < min) && (temp->data != 0))
                     {
                         min = temp->data;
@@ -129,16 +126,13 @@ int coin_num(int *arr, int num, int sum)
         else
         {
 
-            min = sum / arr[0]  + 1;
+            min = sum / arr[0] + 1;
             pre = 0;
             l = 0;
             for (i = 0; i < num; i++)
             {
-                if (i == 0)
-                        pre = arr[0];
-                    else 
-                        pre = arr[i] - arr[i - 1];
-                temp = list_skip(temp, pre);
+                pre = arr[i] - pre;
+                temp = list_skip(curr_top, arr[i]);
                 if ((temp->data < min) && (temp->data != 0))
                 {
                     min = temp->data;
