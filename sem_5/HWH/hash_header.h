@@ -1,13 +1,12 @@
-typedef struct word_t
+typedef struct hashmap_t
 {
     char *ptr;
-    int hash;
-    struct word_t *next;
+    struct hashmap_t *next;
 } hashmap;
 
+int hashmap_seek(hashmap *table, char *target);
+void show_hashmap(hashmap *table);
 int count_hash(char *str);
-
-hashmap *read_dict(int n, char *str);
-void delete_dict(hashmap *top);
-void seek_words(hashmap *word, hashmap *text);
-void clear_buffer();
+hashmap *strings_to_hashmap(int n, char *str);
+void delete_hashmap(hashmap *table);
+hashmap *hashmap_add(hashmap *top, char *str);
