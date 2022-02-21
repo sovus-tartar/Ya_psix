@@ -4,6 +4,8 @@ typedef struct hashmap_t
     struct hashmap_t *next;
 } hashmap;
 
+
+void clear_buffer();
 int hashmap_seek(hashmap *table, char *target);
 void show_hashmap(hashmap *table);
 int count_hash(char *str);

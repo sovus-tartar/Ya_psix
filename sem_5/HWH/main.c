@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "hwh_header.h"
+#include "hash_header.h"
 
 int main()
 {
