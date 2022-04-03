@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <string.h>
 
-#include "hash_header.h"
+#include "../headers/hash_header.h"
 
 int const q = 10;   // hash("abc") == (q^2 * 'a' + q^1 * 'b' + q^0 * 'c') % p
 int const p = 1000; // elements of array in hash-table

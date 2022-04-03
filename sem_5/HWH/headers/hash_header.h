@@ -7,7 +7,7 @@ typedef struct bucket_t
 typedef struct hashmap_t 
 {
     bucket *top;
-        
+
 };
 
 void clear_buffer();
@@ -16,4 +16,4 @@ void show_hashmap(bucket *table);
 int count_hash(char *str);
 bucket *strings_to_hashmap(int n, char *str);
 void delete_hashmap(bucket *table);
-bucket *hashmap_add(bucket *top, char *str);
+bucket *add_bucket(bucket *top, char *str);

@@ -48,7 +48,7 @@ node *bin_tree_build(int nodes, int *in, int *pre)
     else
         root->right = NULL;
 
-    printf("Created node: %d addr: %p, L: %p, R: %p\n", root -> data, root, root -> left, root -> right);
+    //printf("Created node: %d addr: %p, L: %p, R: %p\n", root -> data, root, root -> left, root -> right);
 
     return root;
 }
@@ -96,7 +96,9 @@ void tree_topology_print(node *top, int n)
     {
         printf("%d ", arr_topology[i]);
     }
+
     printf("\n");
+    
     for (i = 0; i < n; i++)
     {
         printf("%d ", arr_data[i]);

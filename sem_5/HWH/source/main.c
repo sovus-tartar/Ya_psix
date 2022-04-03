@@ -2,12 +2,12 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "hwh_header.h"
-#include "hash_header.h"
+#include "../headers/hwh_header.h"
+#include "../headers/hash_header.h"
 
 int main()
 {
-    hashmap *text;
+    bucket *text;
     char *str_text, **ptr_arr, *str_arr;
     int n_text, n, n_words, i;
     
