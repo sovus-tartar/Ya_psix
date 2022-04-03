@@ -3,57 +3,7 @@
 #include <assert.h>
 #include <ctype.h>
 
-enum lexem_kind_t
-{
-    OP,
-    BRACE,
-    NUM,
-    SPACE
-};
-
-enum operation_t
-{
-    ADD,
-    SUB,
-    MUL,
-    DIV
-};
-
-enum braces_t
-{
-    LBRAC,
-    RBRAC
-};
-
-struct lexem_t
-{
-    enum lexem_kind_t kind;
-    union
-    {
-        enum braces_t br;
-        enum operation_t op;
-        int num;
-    } lex;
-};
-
-struct lex_array_t
-{
-    struct lexem_t *lexem;
-    int size;
-    int capacity;
-};
-
-struct lex_list
-{
-    struct lexem_t elem;
-    struct lex_list *next;
-};
-
-struct char_list
-{
-    char c;
-    struct char_list *next;
-};
+#include "lx.h"
 
 struct lex_list add_elem(char c)
 {
@@ -126,7 +76,6 @@ struct lex_array_t list_to_arr(struct lex_list *top, int count)
     }
 
     temp.size = count;
-    temp.capacity = count * sizeof(struct lexem_t);
 
     return temp;
 }
@@ -156,9 +105,11 @@ struct lex_array_t r_input()
     assert(top);
     curr = top;
 
-    while (scanf("%c", &c) == 1)
+    while (scanf("%c", &c) == 1) 
     {
-        if ((c != ' ') && (c != '\t') && (c != '\r'))
+        if (c == '@')
+            break;//for powershell dubugging
+        if ((c != ' ') && (c != '\t') && (c != '\r') && (c != '\n'))
         {
             *curr = add_elem(c);
             curr->next = calloc(1, sizeof(struct lex_list));
@@ -219,15 +170,4 @@ void print_lex_arr(struct lex_array_t A)
             abort();
         }
     }
-}
-
-int main()
-{
-
-    struct lex_array_t A;
-
-    A = r_input();
-
-    print_lex_arr(A);
-    printf("\n");
 }
