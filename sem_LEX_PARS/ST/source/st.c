@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <stdio.h>
-#include "st.h"
+#include "../headers/st.h"
 
 int search_expr(struct lex_array_t arr)
 {

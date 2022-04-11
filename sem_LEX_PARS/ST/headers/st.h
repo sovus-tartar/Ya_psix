@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../LX/lx.h"
+#include "lx.h"
 
 enum node_state {
     EXPR,

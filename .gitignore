@@ -6,3 +6,11 @@ kvadratka/
 *.css
 sem_5/.vscode/launch.json
 sem_5/.vscode/tasks.json
+sem_5/HWH/main.o
+sem_5/HWH/hwh_func.o
+sem_5/HWH/hash_func.o
+sem_LEX_PARS/ST/st_for_contest.c
+sem_LEX_PARS/ST/ST
+sem_LEX_PARS/ST/st_for_contest
+sem_LEX_PARS/ST/.vscode/tasks.json
+sem_LEX_PARS/.vscode/launch.json
