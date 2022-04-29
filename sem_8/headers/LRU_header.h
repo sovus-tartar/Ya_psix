@@ -29,6 +29,3 @@ typedef struct list_node_t
     struct list_node_t *next;
     int data;
 } list_node;
-
-
-p C.hash_table.node_arr[71].list_ptr.data
