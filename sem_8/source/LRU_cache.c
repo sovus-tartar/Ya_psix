@@ -10,22 +10,23 @@
 */
 int calc_hash(int n)
 {
-    int hash, i;
-    hash = 0;
-    i = 1;
+    int key;
 
-    while (n > 0)
-    {
-        hash += (n % 10) % hash_pow;
-        
-        n /= 10;
-    }
+    key = n;
+    
+    key += ~(key << 16);
+    key ^=  (key >>  5);
+    key +=  (key <<  3);
+    key ^=  (key >> 13);
+    key += ~(key <<  9);
+    key ^=  (key >> 17);
+
 
 #ifdef DEBUG
-    printf("Hash for number: %d calculated: %d\n", n, hash);
+    printf("Hash for number: %d calculated: %d\n", n, key);
 #endif
 
-    return hash;
+    return (key % hash_pow);
 }
 
 hashmap hashmap_create(int n)
