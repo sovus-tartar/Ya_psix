@@ -8,7 +8,8 @@
 /*
     To see all debug information compile in gcc with -DDEBUG tag
 */
-int calc_hash(int n)
+
+int calc_hash(int n) //I just googled it
 {
     int key;
 
@@ -60,6 +61,8 @@ void hashmap_add_elem(hashmap *H, hashmap_node *node, int hash)
 {
     hashmap_node *curr;
 
+
+
     curr = H->node_arr + hash;
 
     if (curr->list_ptr == NULL)
@@ -79,6 +82,14 @@ void hashmap_add_elem(hashmap *H, hashmap_node *node, int hash)
     }
 
 #ifdef DEBUG
+    hashmap_node *prev_el, *next_el;
+    node = curr;
+    prev_el = node -> prev;
+    next_el = node -> next;
+    printf("Hashmap: prev_ptr: %p, prev_data: %d, curr_ptr: %p, curr_data: %d, next_ptr: %p, next_data: %d\n", prev_el, (prev_el)?(prev_el->list_ptr->data):(NULL), node, (node)?(node->list_ptr->data):(NULL), next_el, (next_el)?(next_el->list_ptr->data):(NULL));
+#endif
+
+#ifdef DEBUG
     printf("Hashmap: node (%p) put to hashmap (hash = %d)\n", node, hash);
 #endif
 }
@@ -86,9 +97,12 @@ void hashmap_add_elem(hashmap *H, hashmap_node *node, int hash)
 void hashmap_remove_elem(hashmap_node *node)
 {
     hashmap_node *prev_el, *next_el;
-
+    assert(node);
     prev_el = node->prev;
     next_el = node->next;
+#ifdef DEBUG
+    printf("Hashmap: prev_ptr: %p, prev_data: %d, curr_ptr: %p, curr_data: %d, next_ptr: %p, next_data: %d\n", prev_el, (prev_el)?(prev_el->list_ptr->data):(NULL), node, (node)?(node->list_ptr->data):(NULL), next_el, (next_el)?(next_el->list_ptr->data):(NULL));
+#endif
     if (next_el)
     {
         if (prev_el)
@@ -98,7 +112,7 @@ void hashmap_remove_elem(hashmap_node *node)
             free(node);
         }
         else
-        { // no prev el
+        { // next exist prev don't exist
             node->next = next_el->next;
             node->list_ptr = next_el->list_ptr;
             node->prev = NULL;
@@ -133,7 +147,7 @@ hashmap_node *hashmap_create_node(list_node *data)
     temp->list_ptr = data;
 
 #ifdef DEBUG
-    printf("Hashmap: node created (%p), data: %d (%p)\n", temp, data->data);
+    printf("Hashmap: node created (%p), data: %d \n", temp, data->data);
 #endif
 
     return temp;
@@ -148,18 +162,18 @@ hashmap_node *hashmap_get_node(hashmap *H, int hash_data, int data)
 
     while (curr)
     {
-        if (curr->list_ptr->data == data)
+        if (curr->list_ptr->data == data) {
 #ifdef DEBUG
-    printf("Hashmap: found node (%p) for hash: %d with value: %d\n", curr, hash_data, data);
+        printf("Hashmap: found node (%p) for hash: %d with value: %d\n", curr, hash_data, data);
 #endif
 
             return curr;
-
+        }
         curr = curr->next;
     }
 
 #ifdef DEBUG
-    printf("Hashmap: node not found for hash: %d with value: %d\n", curr, hash_data, data);
+    printf("Hashmap: node not found for hash: %d with value: %d\n", hash_data, data);
 #endif
 
     return NULL;
@@ -176,17 +190,18 @@ list_node *hashmap_get_data(hashmap *H, int hash_data, int data)
     {
         if (curr->list_ptr)
         {
-            if (curr->list_ptr->data == data)
+            if (curr->list_ptr->data == data) {
 #ifdef DEBUG
                 printf("Hashmap: found node (%p) for hash: %d with value: %d\n", curr, hash_data, data);
 #endif
                 return curr->list_ptr;
+            }
         }
 
         curr = curr->next;
     }
 #ifdef DEBUG
-    printf("Hashmap: node not found for hash: %d with value: %d\n", curr, hash_data, data);
+    printf("Hashmap: node not found for hash: %d with value: %d\n", hash_data, data);
 #endif
     return NULL;
 }
@@ -263,7 +278,7 @@ cache init_cache(int n)
     temp.filled_nodes = 0;
     temp.hash_table = hashmap_create(hash_pow);
 #ifdef DEBUG
-    printf("Cache initialized, hashmap: %p, list: %p\n", &temp.hash_table, temp.list_ptr);
+    printf("Cache initialized, hashmap: %p, list: %p, size: %d\n", &temp.hash_table, temp.list_ptr, n);
 #endif
     return temp;
 }
@@ -358,11 +373,37 @@ void cache_remove_last(cache *C)
     list_remove_elem(last);
 }
 
+void dump_hashmap(hashmap *H) {
+    int i, num;
+    num = H->number_of_elements;
+
+    printf("START OF HASHMAP DUMP~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+
+    for(i = 0; i < num; i++) {
+        hashmap_node *curr, *temp;
+        
+        curr = H->node_arr + i;
+        temp = curr;
+        printf("HASH = %d:\n", i);
+        while(curr) {
+            if (curr->list_ptr)
+                printf("%d--", curr->list_ptr->data);
+            curr = curr -> next;
+        }
+        printf("\n");
+    }
+
+    printf("END OF HASHMAP DUMP~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+
+}
+
+
 list_node *cache_try_get(cache *C, int data)
 {
     int hash_data;
     list_node *temp;
     hash_data = calc_hash(data);
+    assert(C);
 #ifdef DEBUG
     printf("Cache: requested element with data: %d (hash = %d)\n", data, hash_data);
 #endif
@@ -379,13 +420,15 @@ list_node *cache_try_get(cache *C, int data)
     {
         list_node *last;
 #ifdef DEBUG
-        printf("Cache: requeste element with data: %d (hash = %d) FAILED\n", data, hash_data);
+        printf("Cache: request element with data: %d (hash = %d) FAILED\n", data, hash_data);
 #endif
         last = list_get_last(C->list_ptr);
         cache_remove_last(C);
         cache_add_elem(C, data, hash_data);
     }
-
+#ifdef DEBUG
+    dump_hashmap(&C->hash_table);
+#endif
     return temp;
 }
 
@@ -406,6 +449,7 @@ void cache_show(cache *C)
     printf("\n");
 }
 
+
 int main()
 {
     int m, tries, i, success;
@@ -422,21 +466,23 @@ int main()
         assert(scanf("%d", &num));
 
 #ifdef DEBUG
-        if (cache_try_get(&C, num))
-            printf("ENTERED VALUE: %d\nSUCCESS\n", num);
-        else
-            printf("ENTERED VALUE: %d\nFAILED\n", num);
+        printf("--------------------------------------------------------------------------------------------------------------------------------------\nENTERED VALUE: %d\n", num);
+        if (cache_try_get(&C, num)) {
+            printf("SUCCESS to get %d\n", num);
+            success+=1;
+        }
+        else {
+            printf("FAILED to get %d\n", num);
+        }
         cache_show(&C);
         
 #endif
 
-
+#ifndef DEBUG
     if (cache_try_get(&C, num))
         success += 1;
-
+#endif
     }
-
-
     printf("%d\n", success);
 
 }
