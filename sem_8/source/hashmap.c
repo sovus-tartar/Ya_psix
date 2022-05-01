@@ -1,7 +1,17 @@
 #include "../headers/hashmap.h"
 #include <stdlib.h>
+#include <assert.h>
+#include <stdio.h>
+
+const int hash_pow = 15;    // powerfullness of hash
+
 int hash_count(int key)
 {
+#ifdef DEBUG    
+    int n;
+    n = key;
+#endif
+
     key += ~(key << 16);
     key ^= (key >> 5);
     key += (key << 3);
@@ -10,7 +20,7 @@ int hash_count(int key)
     key ^= (key >> 17);
 
 #ifdef DEBUG
-    printf("Hash for number: %d calculated: %d\n", n, key % hash_pow);
+    printf("Hash for number: %d calculated: %d\n",n , key % hash_pow);
 #endif
 
     return (key % hash_pow);
@@ -24,7 +34,7 @@ hashmap *hashmap_create()
     assert(temp);
 
     temp->number_of_elements = hash_pow;
-    temp->node_arr = calloc(hash_pow, sizeof(hashmap_arr *));
+    temp->node_arr = calloc(hash_pow, sizeof(hashmap_arr));
     assert(temp->node_arr);
 #ifdef DEBUG
     printf("Hashmap created, hash_pow = %d\n", hash_pow);
@@ -83,20 +93,39 @@ void hashmap_add_node(hashmap *H, hashmap_node *node, int hash)
 
     if (temp->node_ptr)
     {
-        hashmap_node *temp_node;
-        temp_node = temp->node_ptr;
-
-        while (temp_node->next)
+        int i, n;
+        hashmap_node * curr;
+        curr = temp -> node_ptr;
+        n = temp -> collisions;
+        for(i = 0; i < n - 1; i++) 
         {
-            temp_node = temp_node->next;
+            curr = curr -> next;
         }
 
-        temp_node->next = node;
-        node->prev = temp_node;
+        node -> next = curr -> next;
+        curr -> next = node;
+
+        temp -> collisions += 1;
     }
     else
-    {
-        temp->node_ptr = node;
+    {   
+        if (H -> list_start == NULL) 
+        {
+            H->list_start = node;
+            temp -> node_ptr = node;
+            node -> next = node;
+            node -> prev = node;
+            temp -> collisions += 1;
+        } 
+        else 
+        {
+            temp -> node_ptr = node;
+            node -> prev = H -> list_start -> prev -> next;
+            H -> list_start -> prev ->next = node;
+            node -> next = H -> list_start;
+            temp -> collisions += 1;
+
+        }
     }
 
 #ifdef DEBUG
@@ -106,23 +135,24 @@ void hashmap_add_node(hashmap *H, hashmap_node *node, int hash)
 
 void *hashmap_get_node(hashmap *H, int hash, void *data)
 {
+    int n, i;
     hashmap_node *temp;
     assert(H);
     assert(data);
     temp = (H->node_arr + hash)->node_ptr;
-
-    while (temp)
+    n = (H->node_arr + hash)->collisions;
+    
+    for(i = 0; i < n - 1; i ++) 
     {
-        if ((temp->data) == data) {
+        if (temp -> data == data) {
 #ifdef DEBUG
-            printf("Hashmap: got node (%p) with hash: %d, data: %p\n", temp, hash, data);
+            printf("Hashmap: got node with data %p, hash = %d\n", data, hash);
 #endif
-            return temp;
+            return data;
         }
-        temp = temp->next;
+
+        temp = temp -> next;
     }
-
-
 
     return NULL;
 }
@@ -144,36 +174,20 @@ void hashmap_delete_node(hashmap *H, int hash, void *data)
 
     prev_nd = temp->prev;
     next_nd = temp->next;
+    
+    (H->node_arr + hash) -> collisions -= 1;
 
-    if (next_nd)
-    {
-        if (prev_nd)
-        {
-            prev_nd->next = next_nd;
-            next_nd->prev = prev_nd;
-            free(temp);
-        }
-        else
-        {
-            (H->node_arr + hash)->node_ptr = next_nd;
-            free(temp);
-        }
-    }
-    else
-    {
-        if (prev_nd)
-        {
-            prev_nd->next = NULL;
-            free(temp);
-        }
-        else
-        {
-            (H->node_arr + hash)->node_ptr = NULL;
-            free(temp);
-        }
-    }
+   if ((prev_nd == temp) || (next_nd == temp)) {
+       free(temp);
+       H->list_start = NULL;
+   }
+
+   prev_nd -> next = next_nd;
+   next_nd -> prev = prev_nd;
+   free(temp);
 
 #ifdef DEBUG
     printf("Hashmap: node(%p) deleted, hash = %d, data: %p\n", temp, hash, data);
 #endif
 }
+
