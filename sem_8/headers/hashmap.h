@@ -12,13 +12,13 @@ typedef struct hashmap_node_t
 typedef struct hashmap_arr_t 
 {
     hashmap_node * node_ptr;
-    int collisions;
+    //int collisions;
 } hashmap_arr;
 
 typedef struct hashmap_t
 {
     int number_of_elements;          // powerfullness of hash
-    struct hashmap_node_t *node_arr; // node_arr[hash]
+    hashmap_arr * node_arr; // node_arr[hash]
 } hashmap;
 
 int hash_count(int key);
@@ -27,4 +27,4 @@ void hashmap_delete(hashmap * H);
 hashmap_node * hashmap_create_node(void * data);
 void hashmap_add(hashmap_node * node, int hash);
 void hashmap_remove(hashmap * H);
-
+void hashmap_delete_node(hashmap * H, int hash, void * data)
