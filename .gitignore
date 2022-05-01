@@ -4,6 +4,7 @@ kvadratka/
 *.html
 *.js
 *.css
+*.log
 sem_5/.vscode/launch.json
 sem_5/.vscode/tasks.json
 sem_5/HWH/main.o
