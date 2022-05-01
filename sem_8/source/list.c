@@ -56,7 +56,7 @@ list_node *list_get_last(list_node *top)
 list_node *list_create_node(int data)
 {
     list_node *temp;
-    temp = calloc(1, sizeof(list_node *));
+    temp = calloc(1, sizeof(list_node));
     assert(temp);
     temp->data = data;
 #ifdef DEBUG
@@ -107,4 +107,18 @@ list_node *list_move_to_top(list_node *top, list_node *node)
 #endif
 
     return list_put_to_top(top, node);
+}
+
+void list_delete(list_node * top) {
+    list_node * curr;
+
+    curr = top -> next;
+    free(top);
+
+    while(curr != top) {
+        list_node * temp;
+        temp = curr;
+        curr = curr -> next;
+        free(temp);
+    }
 }

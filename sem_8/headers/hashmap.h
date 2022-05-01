@@ -25,6 +25,6 @@ hashmap *hashmap_create();
 void hashmap_delete(hashmap *H);
 hashmap_node *hashmap_create_node(void *data);
 void hashmap_add_node(hashmap *H, hashmap_node *node, int hash);
-void *hashmap_get_node(hashmap *H, int hash, void *data);
+hashmap_node *hashmap_get_node(hashmap *H, int hash, void *data);
 void hashmap_delete_node(hashmap *H, int hash, void *data);
 void hashmap_dump(hashmap *H);

@@ -4,65 +4,93 @@
 #include <assert.h>
 #include <stdlib.h>
 
-
 /*
     To see all debug information compile in gcc with -DDEBUG tag
 */
 
 #ifdef DEBUG
-void hashmap_dump(hashmap *H) {
+void hashmap_dump(hashmap *H)
+{
     int i, num;
+    hashmap_node *curr;
     num = H->number_of_elements;
 
     printf("START OF HASHMAP DUMP~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 
-    for(i = 0; i < num; i++) {
+    for (i = 0; i < num; i++)
+    {
         hashmap_node *curr, *temp;
         int j;
-        curr = (H->node_arr + i) -> node_ptr;
+        curr = (H->node_arr + i)->node_ptr;
         printf("HASH = %d:\n", i);
-    
-        for(j = 0; j < (H->node_arr + i)->collisions; j++) {
-            printf("%d--", ((list_node*) (curr -> data)) -> data);
 
+        for (j = 0; j < (H->node_arr + i)->collisions; j++)
+        {
+            printf("%d--", ((list_node *)(curr->data))->data);
+            curr = curr->next;
         }
         printf("\n");
     }
 
     printf("END OF HASHMAP DUMP~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 
+    printf("START OF HASHMAP LIST DUMP\n");
+
+    curr = H->list_start;
+    printf("%d-->", ((list_node *)(curr->data))->data);
+    curr = curr->next;
+    while (curr != H->list_start)
+    {
+        printf("%d-->", ((list_node *)(curr->data))->data);
+        curr = curr->next;
+    }
+    printf("\n");
+
+    printf("%d-->", ((list_node *)(curr->data))->data);
+    curr = curr->prev;
+    while (curr != H->list_start)
+    {
+        printf("%d-->", ((list_node *)(curr->data))->data);
+        curr = curr->prev;
+    }
+    printf("\nEND OF HASHMAP LIST DUMP\n");
 }
 
 #endif
 
-list_node * hashmap_get_data(hashmap * H, int hash, int data) {
-    hashmap_node * curr;
-    list_node * temp;
+list_node *hashmap_get_data(hashmap *H, int hash, int data)
+{
+    hashmap_node *curr;
+    list_node *temp;
     int n, i;
     curr = (H->node_arr + hash)->node_ptr;
-    n = (H->node_arr + hash) -> collisions;
+    n = (H->node_arr + hash)->collisions;
 
-    for(i = 0; i < n; i++) {
-        
-        temp = curr -> data;
+    for (i = 0; i < n; i++)
+    {
 
-        if (temp -> data) {
+        temp = curr->data;
+
+        if (temp->data == data)
+        {
+
 #ifdef DEBUG
-        printf("Hashmap: found data %p (%d) with hash %d\n", temp, data, hash);
+            printf("Hashmap: found data %p (%d) with hash %d\n", temp, data, hash);
 #endif
+            return temp;
         }
-        curr = curr -> next;
+        curr = curr->next;
     }
 #ifdef DEBUG
-        printf("Hashmap: can't get data %p (%d) with hash %d\n", temp, data, hash);
+    printf("Hashmap: can't get data %p (%d) with hash %d\n", temp, data, hash);
 #endif
 
     return NULL;
 }
 
-cache * init_cache(int n)
+cache *init_cache(int n)
 {
-    cache* temp;
+    cache *temp;
     temp = calloc(1, sizeof(cache));
     temp->cache_size = n;
     temp->list_ptr = create_list(n);
@@ -91,7 +119,7 @@ void cache_add_elem(cache *C, int data, int hash_data)
 
 #ifdef DEBUG
     printf("Cache: element with data: %d (hash = %d) added\n", data, hash_data);
-#endif    
+#endif
 }
 
 void cache_remove_last(cache *C)
@@ -118,7 +146,6 @@ void cache_remove_last(cache *C)
 
     list_remove_elem(last);
 }
-
 
 list_node *cache_try_get(cache *C, int data)
 {
@@ -171,12 +198,16 @@ void cache_show(cache *C)
     printf("\n");
 }
 
-
+void free_mem(cache * C) {
+    hashmap_delete(C->hash_table);
+    list_delete(C->list_ptr);
+    free(C);
+}
 
 int main()
 {
     int m, tries, i, success;
-    cache* C;
+    cache *C;
 
     assert(scanf("%d", &m));
     C = init_cache(m);
@@ -190,22 +221,25 @@ int main()
 
 #ifdef DEBUG
         printf("--------------------------------------------------------------------------------------------------------------------------------------\nENTERED VALUE: %d\n", num);
-        if (cache_try_get(C, num)) {
+        if (cache_try_get(C, num))
+        {
             printf("SUCCESS to get %d\n", num);
-            success+=1;
+            success += 1;
         }
-        else {
+        else
+        {
             printf("FAILED to get %d\n", num);
         }
         cache_show(C);
-        
+
 #endif
 
 #ifndef DEBUG
-    if (cache_try_get(C, num))
-        success += 1;
+        if (cache_try_get(C, num))
+            success += 1;
 #endif
     }
     printf("%d\n", success);
 
+    free_mem(C);
 }
